@@ -1,0 +1,115 @@
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: relative;
+    animation-name: move;
+    animation-duration: 2s;
+    /* animation-timing-function: linear; */
+    /* animation-iteration-count: infinite; : 끊기지 않고 무한반복 */
+    animation-iteration-count: infinite;
+    /* animation-direction: normal; : 애니메이션 재생 설정 */
+    /* 기본값 : normal */
+    /* alternate : 앞, 뒤로 재생 */
+    /* reverse : 뒤에서 부터 앞으로 재생 */
+    /* alternate-reverse : 뒤에서 부터 앞으로 재생 / 앞 -> 뒤 */
+    animation-direction: alternate-reverse;
+}
+
+@keyframes move {
+    0%{
+        left: 0;
+    }
+    25% {
+        left: 100px;
+        background-color: red;
+    }
+    50% {
+        left: 200px;
+        background-color: blue;
+    }
+    75% {
+        left: 300px;
+        background-color: pink;
+    }
+    100% {
+        background-color: green;
+    }
+}
+
+.line-active {
+    position: relative;
+    height: 80px;
+}
+
+.line-active span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: red;
+    box-shadow: 0 0 2px 1px red;
+    animation-name: move1;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+}
+
+.line-active span:nth-child(2) {
+    position: absolute;
+    top: 30px;
+    display: inline-block;
+    width: 30px;
+    height: 3px;
+    background-color: blue;
+    box-shadow: 0 0 2px 1px blue;
+    animation-name: move2;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    animation-delay: 0.5s;
+}
+
+@keyframes move1 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 160px;
+    }
+}
+
+@keyframes move2 {
+    from {
+        left: 0;
+    }
+    to {
+        left: 160px;
+    }
+}
+
+.roulette {
+    border-top: 100px solid red;
+    border-bottom: 100px solid violet;
+    border-left: 100px solid blue;
+    border-right: 100px solid yellow;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation-name: rul;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rul {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-1080deg);
+    }
+}
